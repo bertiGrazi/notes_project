@@ -25,4 +25,19 @@ router.post('/', function(req, res){
   //mandando o usuário de volta, 301 = status ok 
   res.redirect(301, '/');
 })
+
+// remove notes
+router.post('/delete', function(req, res){
+  const data = req.body
+  //Colocando o ObjectId para ficar compatível com o MongoDB
+  // uma vez que,  id vem um texto e o MongoDB aceita um ObjectId
+  const id = new ObjectId(data.id);
+
+  db.getDb()
+  .db()
+  .collection('notes')
+  .deleteOne({_id: id});
+
+  res.redirect(301, '/');
+})
 module.exports = router;

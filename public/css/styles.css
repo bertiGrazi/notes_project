@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+}
+
+#main-container {
+  padding: 30px 0;
+  max-width: 550px;
+  min-height: 375px;
+}
+
+footer {
+  height: 300px;
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "notes_project",
+  "version": "1.0.0",
+  "description": "Notes Project with Vue.js, MongoDB e Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bertiGrazi/notes_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bertiGrazi/notes_project/issues"
+  },
+  "homepage": "https://github.com/bertiGrazi/notes_project#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "mongodb": "^4.13.0",
+    "nodemon": "^2.0.20"
+  }
+}

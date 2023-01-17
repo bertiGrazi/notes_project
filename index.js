@@ -9,14 +9,13 @@ const port = 8000;
 //DB
 const db = require('./db/connection')
 
-
 // Template engine
 const { engine } = require('express-handlebars');
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 //responsavel por utilizar o corpo da requisição e utiliza-lo como dado. 
-app.use(bodyParser.urlencoded({ entended: true}));
+app.use(express.urlencoded({ extended: true }))
 
 //Routers Import
 const notesRoutes = require('./routes/notes');

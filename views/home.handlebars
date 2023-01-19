@@ -10,9 +10,11 @@
       {{#each notes}}
       <tr>
         <th scope="row">{{@index}}</th>
-        <td class="title-column"><a href="notes/{{ this.id }}"> {{this.title}} </a></td>
+        <td class="title-column">
+          <a href="notes/{{ this._id }}"> {{this.title}} </a>
+        </td>
         <td class="actions-column">
-          <a href="notes/edit/{{ this.id }}" class="btn btn-primary">Editar</a>
+          <a href="notes/edit/{{ this._id }}" class="btn btn-primary">Editar</a>
           <form action="notes/delete" method="POST">
             <input type="hidden" name="id" value={{ this._id }}>
             <input class="btn btn-danger" type="submit" value="Remover">

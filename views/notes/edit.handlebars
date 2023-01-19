@@ -3,11 +3,11 @@
 <form action="/notes" method="POST">
   <div class="mb-3">
     <label for="title" class="form-label">Título:</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="O que você pretende fazer?"></input>
+    <input type="text" class="form-control" id="title" name="title" placeholder="O que você pretende fazer?" value="{{ note.title }}"></input>
   </div>
     <div class="mb-3">
     <label for="description" class="form-label">Descrição:</label>
-    <textarea class="form-control" name="description" id="description" placeholder="Descreva melhor esta nota..."></textarea>
+    <textarea class="form-control" name="description" id="description" placeholder="Descreva melhor esta nota..."> {{note.description}}</textarea>
   </div>
   <button type="submit" class="btn btn-primary">Criar nota</button>
 

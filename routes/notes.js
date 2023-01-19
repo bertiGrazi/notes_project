@@ -9,6 +9,16 @@ router.get('/', function(req, res) {
   res.render('notes/create')
 })
 
+// router details view
+router.get('/:id', async function(req, res) {
+  // :id - dinãmico para saber qual id o mongoDB está pegando
+  const id = new ObjectId(req.params.id);
+
+  const note = await db.getDb().db().collection('notes').findOne({_id: id});
+
+  res.render('notes/detail', { note });
+})
+
 // sending the note for insertion in the bank
 router.post('/', function(req, res){
   //constituindo os dados que adicionarei no sistema

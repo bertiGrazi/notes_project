@@ -1,11 +1,11 @@
-const mongoose = requiser("mongoose");
+const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
   name: {
     type: String
   }, 
   email: {
-    tupe: String, 
+    type: String, 
     required: true
   }, 
   password: {

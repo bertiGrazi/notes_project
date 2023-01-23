@@ -84,7 +84,6 @@ async function getPessoa(nome) {
 //  getPessoa("Rodrigo"); 
 
 //Utilizando where
-
 async function getPessoaNomeIdade(nome, idade) {
   const p = await Pessoa
                        .where('idade').gte(idade)

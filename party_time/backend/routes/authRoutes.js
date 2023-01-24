@@ -65,4 +65,17 @@ router.post("/register", async (req, res) => {
 
 });
 
+//login an user
+router.post("/login", async(req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  //check if user exist
+  const user = await User.findOne({ email: email});
+
+  if (!user) {
+    return res.status(400).json({ error: "Não há um usuário cadastrado com esse e-mail!"});
+  }
+});
+
 module.exports = router;

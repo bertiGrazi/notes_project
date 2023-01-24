@@ -76,6 +76,13 @@ router.post("/login", async(req, res) => {
   if (!user) {
     return res.status(400).json({ error: "Não há um usuário cadastrado com esse e-mail!"});
   }
+
+  //check if password match
+  const checkPassword = await bcrypt.compare(password, user.password);
+  if (!checkPassword) {
+    return res.status(400).json({ error: "Senha inválida!"});
+  }
+
 });
 
 module.exports = router;

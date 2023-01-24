@@ -24,10 +24,45 @@ router.post("/register", async (req, res) => {
 
     //check if user exists
     const emailExits = await User.findOne({email: email});
-
     if(emailExits) {
       return res.status(400).json({ error: "O e-mail informado já está em uso!"});
     }
+
+    // create password
+    const salt = await bcrypt.genSalt(12);
+    const passwordHash = await bcrypt.hash(password, salt);
+    //console.log(passwordHash)
+
+    const user = new User({
+      name: name, 
+      email: email, 
+      password, passwordHash
+    });
+
+    try {
+      const newUser = await user.save();
+
+      //create token
+      const token = jwt.sign(
+        // payload 
+        {
+          name: newUser.name,
+          id: newUser._id
+        }, 
+        "nossoscret"
+      );
+
+      //return token 
+      res.json({
+        error: null,
+        msg: "Você realizou o cadastro com sucesso", 
+        token: token,
+        userId: newUser._id 
+      })
+    } catch(error) {
+      res.status(400).json({ error });
+    }
+
 });
 
 module.exports = router;

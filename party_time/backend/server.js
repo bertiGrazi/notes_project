@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 //routes 
-const authRouter = require("./routes/authRoutes.js")
+const authRouter = require("./routes/authRoutes.js");
+const userRouter = require("./routes/userRoutes.js");
 
 // middlewares 
   //para usuários que já estão logados
@@ -22,6 +23,7 @@ app.use(express.static("public"));
 
 // atrelar as rotas no express
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
 //mongodb connect
 mongoose.set("strictQuery", true);

@@ -58,7 +58,7 @@ router.post("/register", async (req, res) => {
         name: newUser.name,
         id: newUser._id,
       },
-      "nossoscret"
+      "nossosecret"
     );
 
     //return token

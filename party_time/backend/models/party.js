@@ -1,4 +1,4 @@
-const mongoose = requiser("mongoose");
+const mongoose = require("mongoose");
 
 const PartySchema = new mongoose.Schema({
   title: {
